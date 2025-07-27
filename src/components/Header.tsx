@@ -7,32 +7,32 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-sm border-b">
+    <header className="bg-gradient-to-r from-purple-900/95 via-purple-800/95 to-indigo-900/95 backdrop-blur-sm shadow-lg border-b border-purple-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-gray-900">
+            <Link href="/" className="text-xl font-bold text-white hover:text-yellow-300 transition-colors">
               祥之助
             </Link>
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
               ホーム
             </Link>
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/blog" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
               ブログ
             </Link>
-            <Link href="/profile" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/profile" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
               プロフィール
             </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/contact" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
               お問い合わせ
             </Link>
           </nav>
 
           <button
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,18 +42,18 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="md:hidden py-4 border-t border-purple-500/20">
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
                 ホーム
               </Link>
-              <Link href="/blog" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/blog" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
                 ブログ
               </Link>
-              <Link href="/profile" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/profile" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
                 プロフィール
               </Link>
-              <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/contact" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
                 お問い合わせ
               </Link>
             </nav>
