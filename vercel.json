@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_SANITY_PROJECT_ID": "li8wy5y0",
+    "NEXT_PUBLIC_SANITY_DATASET": "production"
+  }
+}

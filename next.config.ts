@@ -2,9 +2,25 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['cdn.sanity.io'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
-  serverExternalPackages: ['@sanity/client']
+  serverExternalPackages: ['@sanity/client'],
+  async redirects() {
+    return [
+      {
+        source: '/admin',
+        destination: '/studio',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
