@@ -11,8 +11,8 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-black text-white hover:text-yellow-300 transition-colors tracking-wide">
-              <span className="font-mono">syounosuke</span>
+            <Link href="/" className="text-2xl font-black text-white hover:text-yellow-300 transition-colors tracking-wide">
+              <span className="font-mono">Syounosuke</span>
               <span className="text-yellow-300 ml-1 font-sans">AI</span>
               <span className="text-gray-300 font-light">blog</span>
             </Link>

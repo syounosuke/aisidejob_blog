@@ -21,8 +21,13 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "祥之助 - 公式サイト兼ブログ",
-  description: "祥之助の公式サイト兼ブログ。テクノロジーとビジネスの最新情報を発信しています。",
+  title: "syounosukeAIblog",
+  description: "syounosuke AIbiog",
+  icons: {
+    icon: "/profile.webp",
+    shortcut: "/profile.webp",
+    apple: "/profile.webp",
+  },
 };
 
 export default function RootLayout({
