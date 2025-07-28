@@ -37,9 +37,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-yellow-300 transition-colors">
+                <a href="https://x.com/syounosukeblog" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-yellow-300 transition-colors">
                   お問い合わせ
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

@@ -13,7 +13,7 @@ export default function ProfilePage() {
         />
         <h1 className="text-4xl font-bold text-gray-900 mb-4">祥之助</h1>
         <p className="text-xl text-gray-600">
-          テクノロジー & ビジネス ライター
+          個人事業主＆副業ブロガー
         </p>
       </div>
 
@@ -22,51 +22,48 @@ export default function ProfilePage() {
         
         <div className="bg-gray-50 p-8 rounded-lg mb-8">
           <p className="text-gray-700 leading-relaxed mb-4">
-            テクノロジー業界で10年以上の経験を持つエンジニア兼ビジネスパーソン。
-            Web開発からクラウドインフラ、AI・機械学習まで幅広い技術領域に精通している。
+            10年間、自動車の車載部品の設計開発の仕事に携わる。<br />
+            その後、脱サラして家業の事業を継承して事業運営中。
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            個人事業主の運営について発信しているブログサイト、<a href="https://syounosukeblog.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">syounosukeblog</a>も2021年から運営しています。
           </p>
           <p className="text-gray-700 leading-relaxed">
-            現在は、スタートアップから大企業まで様々な組織でデジタルトランスフォーメーションの推進に携わりながら、
-            最新の技術トレンドやビジネス戦略について実践的な視点から情報を発信している。
+            最近ではWeb3の世界に参加して、NFTやAIの知識を習得しています。
           </p>
         </div>
 
         <h3 className="text-xl font-bold text-gray-900 mb-4">専門分野</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="border border-gray-200 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-3">フロントエンド開発</h4>
+            <h4 className="font-semibold text-gray-900 mb-3">SEO対策</h4>
             <ul className="text-gray-600 space-y-1">
-              <li>• React / Next.js</li>
-              <li>• TypeScript</li>
-              <li>• Tailwind CSS</li>
-              <li>• Vue.js / Nuxt.js</li>
+              <li>• キーワード選定</li>
+              <li>• SEO記事作成</li>
+              <li>• 流入解析</li>
             </ul>
           </div>
           <div className="border border-gray-200 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-3">バックエンド開発</h4>
+            <h4 className="font-semibold text-gray-900 mb-3">サイト開発</h4>
             <ul className="text-gray-600 space-y-1">
-              <li>• Node.js / Express</li>
-              <li>• Python / Django</li>
-              <li>• API設計</li>
-              <li>• データベース設計</li>
+              <li>• wordpress</li>
+              <li>• Figma⇒Studio</li>
+              <li>• vibe coding(claude code)</li>
             </ul>
           </div>
           <div className="border border-gray-200 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-3">クラウド / インフラ</h4>
+            <h4 className="font-semibold text-gray-900 mb-3">機械設計</h4>
             <ul className="text-gray-600 space-y-1">
-              <li>• AWS / Azure / GCP</li>
-              <li>• Docker / Kubernetes</li>
-              <li>• CI/CD</li>
-              <li>•監視・運用</li>
+              <li>• Fusion360</li>
+              <li>• 構想設計、試作設計～量産設計まで</li>
+              <li>• 他社品ベンチマーク、評価試験なども対応可能</li>
             </ul>
           </div>
           <div className="border border-gray-200 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-3">ビジネス戦略</h4>
+            <h4 className="font-semibold text-gray-900 mb-3">3DCG</h4>
             <ul className="text-gray-600 space-y-1">
-              <li>• DXコンサルティング</li>
-              <li>• プロダクト戦略</li>
-              <li>• アジャイル開発</li>
-              <li>• チームマネジメント</li>
+              <li>• Blender</li>
+              <li>• 3Dプリンタ(Bambu Lab P1s)</li>
             </ul>
           </div>
         </div>
@@ -74,24 +71,17 @@ export default function ProfilePage() {
         <h3 className="text-xl font-bold text-gray-900 mb-4">経歴</h3>
         <div className="space-y-6 mb-8">
           <div className="border-l-4 border-blue-500 pl-6">
-            <h4 className="font-semibold text-gray-900">現在</h4>
-            <p className="text-gray-600">フリーランス テクニカルコンサルタント</p>
+            <h4 className="font-semibold text-gray-900">2021-現在</h4>
+            <p className="text-gray-600">個人事業主</p>
             <p className="text-gray-500 text-sm mt-1">
-              スタートアップから大企業まで、技術戦略立案から実装まで幅広くサポート
+              家業を事業継承して、事業運営に奮闘中
             </p>
           </div>
           <div className="border-l-4 border-gray-300 pl-6">
-            <h4 className="font-semibold text-gray-900">2020-2023</h4>
-            <p className="text-gray-600">テックスタートアップ CTO</p>
+            <h4 className="font-semibold text-gray-900">2011-2020</h4>
+            <p className="text-gray-600">自動車車載部品の設計者</p>
             <p className="text-gray-500 text-sm mt-1">
-              AIを活用したSaaSプロダクトの技術責任者として、チーム構築から製品開発まで主導
-            </p>
-          </div>
-          <div className="border-l-4 border-gray-300 pl-6">
-            <h4 className="font-semibold text-gray-900">2015-2020</h4>
-            <p className="text-gray-600">大手IT企業 シニアエンジニア</p>
-            <p className="text-gray-500 text-sm mt-1">
-              エンタープライズ向けWebアプリケーション開発およびクラウド移行プロジェクトをリード
+              構想設計から量産立ち上げまで製品育成をする仕事に従事
             </p>
           </div>
         </div>
@@ -99,22 +89,16 @@ export default function ProfilePage() {
         <h3 className="text-xl font-bold text-gray-900 mb-4">お問い合わせ</h3>
         <div className="bg-blue-50 p-6 rounded-lg">
           <p className="text-gray-700 mb-4">
-            技術コンサルティング、講演、記事執筆のご依頼は以下からお気軽にお問い合わせください。
+            記事作成や技術相談などのご依頼はX(旧Twitter)DMからお問い合わせください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="mailto:contact@syounosuke.com"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-            >
-              メールでお問い合わせ
-            </a>
-            <a
-              href="https://twitter.com/syounosuke"
+              href="https://x.com/syounosukeblog"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors"
             >
-              Twitter
+              X(Twitter)
             </a>
           </div>
         </div>

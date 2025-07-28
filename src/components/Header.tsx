@@ -28,9 +28,9 @@ export default function Header() {
             <Link href="/profile" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
               プロフィール
             </Link>
-            <Link href="/contact" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
+            <a href="https://x.com/syounosukeblog" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
               お問い合わせ
-            </Link>
+            </a>
           </nav>
 
           <button
@@ -55,9 +55,9 @@ export default function Header() {
               <Link href="/profile" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
                 プロフィール
               </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
+              <a href="https://x.com/syounosukeblog" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-yellow-300 transition-colors font-medium">
                 お問い合わせ
-              </Link>
+              </a>
             </nav>
           </div>
         )}
