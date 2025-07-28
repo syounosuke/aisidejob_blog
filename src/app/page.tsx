@@ -30,7 +30,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col items-center justify-center text-center">
             <div className="space-y-8">
-              <div className="flex items-center gap-6">
+              <div className="flex items-center justify-center gap-6">
                 <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
                   <span className="text-white block">祥</span>
                   <span className="text-gradient block">之</span>
@@ -78,9 +78,9 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white fade-in-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-in-up-delay-1">
             <h2 className="text-3xl font-bold mb-4" style={{color: 'var(--primary-blue)'}}>自己紹介</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               個人事業を運営しながら、ブログやAIについて情報を発信しています。<br />
@@ -88,7 +88,7 @@ export default async function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-up-delay-2">
             <div className="group relative p-8 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-indigo-600/10 rounded-2xl border border-blue-200/20 backdrop-blur-sm hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative z-10">
@@ -137,7 +137,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden fade-in-up">
         {/* Multi-layer Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-purple-900/30 to-slate-900/40"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900/20 via-transparent to-pink-900/20"></div>
@@ -157,13 +157,13 @@ export default async function Home() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-2xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 fade-in-up-delay-1">
             <h2 className="text-3xl font-bold mb-4 drop-shadow-lg text-white">
               <span className="text-gradient">リンク</span>
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto fade-in-up-delay-2">
             <a
               href="https://x.com/syounosukeblog"
               target="_blank"
@@ -221,9 +221,9 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 fade-in-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-in-up-delay-1">
             <h2 className="text-3xl font-bold mb-4" style={{color: 'var(--primary-blue)'}}>最新記事</h2>
             <p className="text-lg text-gray-600">
               最新のブログ記事をチェックしてください
@@ -232,13 +232,13 @@ export default async function Home() {
           
           {posts.length > 0 ? (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 fade-in-up-delay-2">
                 {posts.slice(0, 3).map((post: Post) => (
                   <BlogCard key={post._id} post={post} />
                 ))}
               </div>
               
-              <div className="text-center">
+              <div className="text-center fade-in-up-delay-3">
                 <Link
                   href="/blog"
                   className="inline-flex items-center text-gold hover:opacity-80 font-medium"
@@ -251,7 +251,7 @@ export default async function Home() {
               </div>
             </>
           ) : (
-            <div className="text-center">
+            <div className="text-center fade-in-up-delay-2">
               <p className="text-gray-600 mb-8">記事は準備中です。近日公開予定！</p>
               <Link
                 href="/blog"
