@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npx sanity:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm run dev:*)"
     ],
     "deny": []
   }
