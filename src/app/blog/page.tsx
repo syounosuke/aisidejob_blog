@@ -40,7 +40,7 @@ export default function BlogPage() {
 
   // Filter and sort posts
   const filteredPosts = useMemo(() => {
-    let filtered = posts.filter(post => {
+    const filtered = posts.filter(post => {
       // Search term filter
       const matchesSearch = !searchTerm || 
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
