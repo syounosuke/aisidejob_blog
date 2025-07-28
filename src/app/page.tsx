@@ -30,19 +30,19 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col items-center justify-center text-center">
             <div className="space-y-8">
-              <div className="flex items-center gap-6">
+              <div className="flex items-center justify-center gap-8">
                 <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
-                  <span className="text-white block">祥</span>
-                  <span className="text-gradient block">之</span>
-                  <span className="text-white block">助</span>
+                  <span className="text-white">祥</span>
+                  <span className="text-gradient">之</span>
+                  <span className="text-white">助</span>
                 </h1>
                 <div className="relative">
                   <div className="absolute -inset-2 bg-gradient-to-r from-electric/30 to-purple-500/30 rounded-full blur-lg"></div>
                   <Image
                     src="/アイコン.webp"
                     alt="祥之助のアイコン"
-                    width={250}
-                    height={250}
+                    width={200}
+                    height={200}
                     className="relative rounded-full shadow-xl border border-white/20"
                     priority
                   />
@@ -57,7 +57,7 @@ export default async function Home() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/blog"
-                    className="group bg-electric text-white px-8 py-4 rounded-2xl font-semibold hover:bg-electric/90 transition-all duration-300 shadow-xl hover:shadow-electric/25 inline-flex items-center justify-center"
+                    className="group bg-electric text-white px-8 py-4 rounded-2xl font-semibold hover:bg-electric/90 transition-all duration-300 shadow-xl hover:shadow-electric/25 inline-flex items-center justify-center relative z-10"
                   >
                     ブログを読む
                     <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +66,7 @@ export default async function Home() {
                   </Link>
                   <Link
                     href="/profile"
-                    className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-semibold hover:border-electric hover:text-electric transition-all duration-300 inline-flex items-center justify-center"
+                    className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-semibold hover:border-electric hover:text-electric transition-all duration-300 inline-flex items-center justify-center relative z-10"
                   >
                     プロフィール
                   </Link>
