@@ -4,6 +4,8 @@ import { getPosts } from "../lib/sanity";
 import BlogCard from "@/components/BlogCard";
 import { Post } from "../types/sanity";
 
+export const revalidate = 60; // 60秒ごとに再生成
+
 export default async function Home() {
   const posts = await getPosts() || [];
   return (
