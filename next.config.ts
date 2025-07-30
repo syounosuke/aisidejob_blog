@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    formats: ['image/webp', 'image/avif'],
   },
   serverExternalPackages: ['@sanity/client'],
   async redirects() {
