@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://aisidejob-blog.vercel.app",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://20250727aisidejobblog.vercel.app",
     title: "祥之助のAIブログ",
     description: "テクノロジーとビジネスの情報で幸せを追求するブログ",
     siteName: "祥之助のAIブログ",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     images: ["/アイコン.webp"],
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://aisidejob-blog.vercel.app",
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://20250727aisidejobblog.vercel.app",
   },
 };
 

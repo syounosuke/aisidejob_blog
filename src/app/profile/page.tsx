@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'プロフィール | 祥之助のAIブログ',
     description: '祥之助のプロフィールページ。個人事業主として活動し、SEO対策、ウェブサイト開発、機械設計、3DCGなどの専門分野で幅広く活動しています。',
     type: 'profile',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'}/profile`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app'}/profile`,
     siteName: '祥之助のAIブログ',
     locale: 'ja_JP',
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     images: ['/profile.webp'],
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'}/profile`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app'}/profile`,
   },
 }
 

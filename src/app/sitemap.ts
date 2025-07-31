@@ -2,7 +2,7 @@ import { getPosts } from '@/lib/sanity'
 import { Post } from '@/types/sanity'
 
 export default async function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app'
   
   try {
     // 全記事を取得

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'ブログ一覧 | 祥之助のAIブログ',
     description: 'テクノロジーとビジネスに関する最新の記事一覧。AI、Web技術、ビジネス戦略について詳しく解説した記事をご覧いただけます。',
     type: 'website',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'}/blog`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app'}/blog`,
     siteName: '祥之助のAIブログ',
     locale: 'ja_JP',
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     images: ['/アイコン.webp'],
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'}/blog`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app'}/blog`,
   },
 }
 

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: '祥之助のAIブログ - テクノロジーとビジネスで幸せを追求',
     description: 'テクノロジーとビジネスの情報で幸せを追求するブログ。AI、Web技術、ビジネス戦略について個人事業主の視点から深く掘り下げて情報発信しています。',
     type: 'website',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app',
     siteName: '祥之助のAIブログ',
     locale: 'ja_JP',
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     images: ['/アイコン.webp'],
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app',
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app',
   },
 }
 

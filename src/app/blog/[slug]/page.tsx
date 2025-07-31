@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app'
   const postUrl = `${baseUrl}/blog/${post.slug.current}`
   
   return {
