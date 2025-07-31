@@ -62,7 +62,7 @@ export async function getPost(slug: string) {
 export async function getRelatedPosts(categoryRefs: string[], currentSlug: string) {
   try {
     // まずカテゴリが一致する記事を探す
-    let relatedPosts = []
+    let relatedPosts: any[] = []
     
     if (categoryRefs && categoryRefs.length > 0) {
       relatedPosts = await client.fetch(`
@@ -95,8 +95,8 @@ export async function getRelatedPosts(categoryRefs: string[], currentSlug: strin
       `, { currentSlug })
       
       // 重複を避けて追加
-      const existingIds = relatedPosts.map(post => post._id)
-      const filteredAdditional = additionalPosts.filter(post => !existingIds.includes(post._id))
+      const existingIds = relatedPosts.map((post: any) => post._id)
+      const filteredAdditional = additionalPosts.filter((post: any) => !existingIds.includes(post._id))
       
       relatedPosts = [...relatedPosts, ...filteredAdditional.slice(0, 2 - relatedPosts.length)]
     }
