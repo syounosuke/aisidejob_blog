@@ -1,5 +1,6 @@
 import { createClient } from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
+import { Post } from '../types/sanity'
 
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'li8wy5y0',
@@ -59,10 +60,10 @@ export async function getPost(slug: string) {
   }
 }
 
-export async function getRelatedPosts(categoryRefs: string[], currentSlug: string) {
+export async function getRelatedPosts(categoryRefs: string[], currentSlug: string): Promise<Post[]> {
   try {
     // まずカテゴリが一致する記事を探す
-    let relatedPosts: any[] = []
+    let relatedPosts: Post[] = []
     
     if (categoryRefs && categoryRefs.length > 0) {
       relatedPosts = await client.fetch(`
@@ -81,7 +82,7 @@ export async function getRelatedPosts(categoryRefs: string[], currentSlug: strin
     
     // カテゴリが一致する記事が少ない場合、最新記事で補完
     if (relatedPosts.length < 2) {
-      const additionalPosts = await client.fetch(`
+      const additionalPosts: Post[] = await client.fetch(`
         *[_type == "post" && slug.current != $currentSlug] 
         | order(publishedAt desc) [0...${2 - relatedPosts.length}] {
           _id,
@@ -95,8 +96,8 @@ export async function getRelatedPosts(categoryRefs: string[], currentSlug: strin
       `, { currentSlug })
       
       // 重複を避けて追加
-      const existingIds = relatedPosts.map((post: any) => post._id)
-      const filteredAdditional = additionalPosts.filter((post: any) => !existingIds.includes(post._id))
+      const existingIds = relatedPosts.map((post: Post) => post._id)
+      const filteredAdditional = additionalPosts.filter((post: Post) => !existingIds.includes(post._id))
       
       relatedPosts = [...relatedPosts, ...filteredAdditional.slice(0, 2 - relatedPosts.length)]
     }
