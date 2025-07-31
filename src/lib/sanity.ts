@@ -49,12 +49,63 @@ export async function getPost(slug: string) {
         content,
         "imageUrl": mainImage.asset->url,
         "categories": coalesce(categories[]->title, []),
-        "tags": coalesce(tags[]->title, [])
+        "tags": coalesce(tags[]->title, []),
+        "categoryRefs": categories[]._ref
       }
     `, { slug })
   } catch (error) {
     console.error('Failed to fetch post:', error)
     return null
+  }
+}
+
+export async function getRelatedPosts(categoryRefs: string[], currentSlug: string) {
+  try {
+    // まずカテゴリが一致する記事を探す
+    let relatedPosts = []
+    
+    if (categoryRefs && categoryRefs.length > 0) {
+      relatedPosts = await client.fetch(`
+        *[_type == "post" && categories[]._ref in $categoryRefs && slug.current != $currentSlug] 
+        | order(publishedAt desc) [0...2] {
+          _id,
+          title,
+          slug,
+          excerpt,
+          publishedAt,
+          "imageUrl": mainImage.asset->url,
+          "categories": coalesce(categories[]->title, [])
+        }
+      `, { categoryRefs, currentSlug })
+    }
+    
+    // カテゴリが一致する記事が少ない場合、最新記事で補完
+    if (relatedPosts.length < 2) {
+      const additionalPosts = await client.fetch(`
+        *[_type == "post" && slug.current != $currentSlug] 
+        | order(publishedAt desc) [0...${2 - relatedPosts.length}] {
+          _id,
+          title,
+          slug,
+          excerpt,
+          publishedAt,
+          "imageUrl": mainImage.asset->url,
+          "categories": coalesce(categories[]->title, [])
+        }
+      `, { currentSlug })
+      
+      // 重複を避けて追加
+      const existingIds = relatedPosts.map(post => post._id)
+      const filteredAdditional = additionalPosts.filter(post => !existingIds.includes(post._id))
+      
+      relatedPosts = [...relatedPosts, ...filteredAdditional.slice(0, 2 - relatedPosts.length)]
+    }
+    
+    console.log('getRelatedPosts result:', relatedPosts)
+    return relatedPosts
+  } catch (error) {
+    console.error('Failed to fetch related posts:', error)
+    return []
   }
 }
 

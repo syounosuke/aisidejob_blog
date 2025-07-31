@@ -12,6 +12,7 @@ export interface Post {
   imageUrl?: string
   categories?: string[]
   tags?: string[]
+  categoryRefs?: string[]
 }
 
 export interface Category {

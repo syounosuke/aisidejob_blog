@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getPost, getPosts } from '../../../lib/sanity'
+import { getPost, getPosts, getRelatedPosts } from '../../../lib/sanity'
 import { Post } from '../../../types/sanity'
 import BlogPostClient from '@/components/BlogPostClient'
 
@@ -15,7 +15,16 @@ export default async function BlogPost({ params }: Props) {
     notFound()
   }
 
-  return <BlogPostClient post={post} />
+  // 関連記事を取得
+  const relatedPosts = await getRelatedPosts(post.categoryRefs || [], slug)
+  
+  // デバッグ用ログ
+  console.log('Post categories:', post.categories)
+  console.log('Post categoryRefs:', post.categoryRefs)
+  console.log('Related posts count:', relatedPosts?.length || 0)
+  console.log('Related posts:', relatedPosts)
+
+  return <BlogPostClient post={post} relatedPosts={relatedPosts} />
 }
 
 export async function generateStaticParams() {

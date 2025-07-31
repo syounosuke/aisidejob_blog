@@ -8,13 +8,15 @@ import { urlFor } from '../lib/sanity'
 import { Post } from '../types/sanity'
 import ShareButton from '@/components/ShareButton'
 import TableOfContents from '@/components/TableOfContents'
+import RelatedPosts from '@/components/RelatedPosts'
 import { extractHeadings, TableOfContentItem } from '@/lib/extractHeadings'
 
 interface BlogPostClientProps {
   post: Post
+  relatedPosts?: Post[]
 }
 
-export default function BlogPostClient({ post }: BlogPostClientProps) {
+export default function BlogPostClient({ post, relatedPosts = [] }: BlogPostClientProps) {
   const [isTocOpen, setIsTocOpen] = useState(false)
   const headings: TableOfContentItem[] = extractHeadings(post.content)
 
@@ -215,6 +217,8 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
           <ShareButton title={post.title} url={`${process.env.NEXT_PUBLIC_SITE_URL || ''}/blog/${post.slug.current}`} />
         </div>
       </div>
+
+      <RelatedPosts posts={relatedPosts} />
       
       <TableOfContents 
         headings={headings}
