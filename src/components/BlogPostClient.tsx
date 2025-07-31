@@ -67,19 +67,22 @@ export default function BlogPostClient({ post, relatedPosts = [] }: BlogPostClie
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       h1: ({ children }: any) => {
         const headingIndex = headings.findIndex(h => h.text === children?.join(''))
-        const id = headingIndex >= 0 ? headings[headingIndex].id : `heading-${Math.random()}`
+        const headingText = children?.join('') || ''
+        const id = headingIndex >= 0 ? headings[headingIndex].id : `heading-${headingText.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
         return <h1 id={id} className="text-3xl font-bold text-gray-900 mt-8 mb-4">{children}</h1>
       },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       h2: ({ children }: any) => {
         const headingIndex = headings.findIndex(h => h.text === children?.join(''))
-        const id = headingIndex >= 0 ? headings[headingIndex].id : `heading-${Math.random()}`
+        const headingText = children?.join('') || ''
+        const id = headingIndex >= 0 ? headings[headingIndex].id : `heading-${headingText.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
         return <h2 id={id} className="text-2xl font-bold text-gray-900 mt-8 mb-4">{children}</h2>
       },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       h3: ({ children }: any) => {
         const headingIndex = headings.findIndex(h => h.text === children?.join(''))
-        const id = headingIndex >= 0 ? headings[headingIndex].id : `heading-${Math.random()}`
+        const headingText = children?.join('') || ''
+        const id = headingIndex >= 0 ? headings[headingIndex].id : `heading-${headingText.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
         return <h3 id={id} className="text-xl font-bold text-gray-900 mt-6 mb-3">{children}</h3>
       },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
