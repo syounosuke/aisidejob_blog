@@ -26,8 +26,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.excerpt || `${post.title}について詳しく解説しています。`,
     keywords: post.tags || [],
     authors: [{ name: "祥之助" }],
-    publishedTime: post.publishedAt,
-    modifiedTime: post.updatedAt || post.publishedAt,
     openGraph: {
       type: 'article',
       title: post.title,
