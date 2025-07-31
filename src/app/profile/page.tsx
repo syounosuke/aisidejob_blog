@@ -1,4 +1,37 @@
+import { Metadata } from 'next'
 import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: 'プロフィール',
+  description: '祥之助のプロフィールページ。10年間の自動車車載部品設計開発経験を経て、2021年から個人事業主として活動。SEO対策、ウェブサイト開発、機械設計、3DCGなどの専門分野で幅広く活動しています。',
+  keywords: ['祥之助', 'プロフィール', '個人事業主', 'SEO対策', 'ウェブサイト開発', '機械設計', '3DCG', 'ブロガー'],
+  openGraph: {
+    title: 'プロフィール | 祥之助のAIブログ',
+    description: '祥之助のプロフィールページ。個人事業主として活動し、SEO対策、ウェブサイト開発、機械設計、3DCGなどの専門分野で幅広く活動しています。',
+    type: 'profile',
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'}/profile`,
+    siteName: '祥之助のAIブログ',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/profile.webp',
+        width: 1200,
+        height: 630,
+        alt: '祥之助のプロフィール',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'プロフィール | 祥之助のAIブログ',
+    description: '祥之助のプロフィールページ。個人事業主として活動し、SEO対策、ウェブサイト開発、機械設計、3DCGなどの専門分野で幅広く活動しています。',
+    creator: '@syounosukeblog',
+    images: ['/profile.webp'],
+  },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'}/profile`,
+  },
+}
 
 export default function ProfilePage() {
   return (

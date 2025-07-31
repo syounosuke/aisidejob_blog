@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Image from "next/image";
 import Link from "next/link";
 import { getPosts } from "../lib/sanity";
@@ -5,6 +6,38 @@ import BlogCard from "@/components/BlogCard";
 import { Post } from "../types/sanity";
 
 export const revalidate = 60; // 60秒ごとに再生成
+
+export const metadata: Metadata = {
+  title: '祥之助のAIブログ - テクノロジーとビジネスで幸せを追求',
+  description: 'テクノロジーとビジネスの情報で幸せを追求するブログ。AI、Web技術、ビジネス戦略について個人事業主の視点から深く掘り下げて情報発信しています。',
+  keywords: ['AI', 'ブログ', 'テクノロジー', 'ビジネス', 'Web開発', '個人事業主', '祥之助', 'NFT', 'SEO'],
+  openGraph: {
+    title: '祥之助のAIブログ - テクノロジーとビジネスで幸せを追求',
+    description: 'テクノロジーとビジネスの情報で幸せを追求するブログ。AI、Web技術、ビジネス戦略について個人事業主の視点から深く掘り下げて情報発信しています。',
+    type: 'website',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app',
+    siteName: '祥之助のAIブログ',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/アイコン.webp',
+        width: 1200,
+        height: 630,
+        alt: '祥之助のAIブログ',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '祥之助のAIブログ - テクノロジーとビジネスで幸せを追求',
+    description: 'テクノロジーとビジネスの情報で幸せを追求するブログ。AI、Web技術、ビジネス戦略について個人事業主の視点から深く掘り下げて情報発信しています。',
+    creator: '@syounosukeblog',
+    images: ['/アイコン.webp'],
+  },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app',
+  },
+}
 
 export default async function Home() {
   const posts = await getPosts() || [];

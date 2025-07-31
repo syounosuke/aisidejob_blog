@@ -21,12 +21,49 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "syounosukeAIblog",
-  description: "syounosuke AIbiog",
+  title: {
+    default: "祥之助のAIブログ",
+    template: "%s | 祥之助のAIブログ"
+  },
+  description: "テクノロジーとビジネスの情報で幸せを追求するブログ。AI、Web技術、ビジネスについて深く掘り下げて情報発信しています。",
+  keywords: ["AI", "テクノロジー", "ビジネス", "Web開発", "ブログ", "祥之助"],
+  authors: [{ name: "祥之助" }],
+  creator: "祥之助",
+  publisher: "祥之助",
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
-    icon: "/profile.webp",
-    shortcut: "/profile.webp",
-    apple: "/profile.webp",
+    icon: "/アイコン.webp",
+    shortcut: "/アイコン.webp",
+    apple: "/アイコン.webp",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://aisidejob-blog.vercel.app",
+    title: "祥之助のAIブログ",
+    description: "テクノロジーとビジネスの情報で幸せを追求するブログ",
+    siteName: "祥之助のAIブログ",
+    images: [
+      {
+        url: "/アイコン.webp",
+        width: 1200,
+        height: 630,
+        alt: "祥之助のAIブログ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "祥之助のAIブログ",
+    description: "テクノロジーとビジネスの情報で幸せを追求するブログ",
+    creator: "@syounosukeblog",
+    images: ["/アイコン.webp"],
+  },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://aisidejob-blog.vercel.app",
   },
 };
 
