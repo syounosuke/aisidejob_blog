@@ -1,4 +1,5 @@
 import { getPosts } from '@/lib/sanity'
+import { Post } from '@/types/sanity'
 
 export default async function sitemap() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aisidejob-blog.vercel.app'
@@ -8,7 +9,7 @@ export default async function sitemap() {
     const posts = await getPosts() || []
     
     // 記事ページのサイトマップエントリを生成
-    const postEntries = posts.map((post) => ({
+    const postEntries = posts.map((post: Post) => ({
       url: `${baseUrl}/blog/${post.slug.current}`,
       lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(post.publishedAt),
       changeFrequency: 'weekly' as const,
