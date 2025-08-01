@@ -13,6 +13,10 @@ export interface Post {
   categories?: string[]
   tags?: string[]
   categoryRefs?: string[]
+  seo?: {
+    metaTitle?: string
+    metaDescription?: string
+  }
 }
 
 export interface Category {

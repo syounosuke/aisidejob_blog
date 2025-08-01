@@ -51,7 +51,8 @@ export async function getPost(slug: string) {
         "imageUrl": mainImage.asset->url,
         "categories": coalesce(categories[]->title, []),
         "tags": coalesce(tags[]->title, []),
-        "categoryRefs": categories[]._ref
+        "categoryRefs": categories[]._ref,
+        seo
       }
     `, { slug })
   } catch (error) {

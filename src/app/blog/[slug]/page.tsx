@@ -3,6 +3,7 @@ import { getPost, getPosts, getRelatedPosts } from '../../../lib/sanity'
 import { Post } from '../../../types/sanity'
 import BlogPostClient from '@/components/BlogPostClient'
 import { Metadata } from 'next'
+import { generateSeoMetadata } from '../../../lib/generateSeoMeta'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -21,17 +22,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://20250727aisidejobblog.vercel.app'
   const postUrl = `${baseUrl}/blog/${post.slug.current}`
   
+  // SEOメタデータを自動生成（手動設定がある場合はそれを優先）
+  const seoData = generateSeoMetadata(post.title, post.content, post.excerpt, post.seo)
+  
   return {
-    title: post.title,
-    description: post.excerpt || `${post.title}について詳しく解説しています。`,
+    title: seoData.title,
+    description: seoData.description,
     keywords: post.tags || [],
     authors: [{ name: "祥之助" }],
     openGraph: {
       type: 'article',
-      title: post.title,
-      description: post.excerpt || `${post.title}について詳しく解説しています。`,
+      title: seoData.title,
+      description: seoData.description,
       url: postUrl,
-      siteName: '祥之助のAIブログ',
+      siteName: 'AIサイドジョブブログ',
       locale: 'ja_JP',
       images: post.imageUrl ? [
         {
@@ -55,8 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt || `${post.title}について詳しく解説しています。`,
+      title: seoData.title,
+      description: seoData.description,
       creator: '@syounosukeblog',
       images: post.imageUrl ? [post.imageUrl] : ['/アイコン.webp'],
     },
