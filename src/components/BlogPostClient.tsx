@@ -87,10 +87,35 @@ export default function BlogPostClient({ post, relatedPosts = [] }: BlogPostClie
       },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       normal: ({ children }: any) => (
-        <p className="text-gray-700 leading-relaxed mb-4">{children}</p>
+        <p className="text-gray-700 leading-tight mb-6">{children}</p>
+      ),
+    },
+    list: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      bullet: ({ children }: any) => (
+        <ul className="my-6 ml-6 list-disc space-y-2 text-gray-700 leading-tight">
+          {children}
+        </ul>
+      ),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      number: ({ children }: any) => (
+        <ol className="my-6 ml-6 list-decimal space-y-2 text-gray-700 leading-tight">
+          {children}
+        </ol>
+      ),
+    },
+    listItem: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      bullet: ({ children }: any) => (
+        <li className="leading-tight">{children}</li>
+      ),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      number: ({ children }: any) => (
+        <li className="leading-tight">{children}</li>
       ),
     },
     marks: {
+      hardBreak: () => <br />,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       link: ({ children, value }: any) => (
         <a
@@ -106,7 +131,7 @@ export default function BlogPostClient({ post, relatedPosts = [] }: BlogPostClie
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
         <Link
           href="/blog"
@@ -131,7 +156,7 @@ export default function BlogPostClient({ post, relatedPosts = [] }: BlogPostClie
           </div>
 
           <div className="flex items-start justify-between gap-4 mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 flex-1">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 flex-1">
               {post.title}
             </h1>
             {headings.length > 0 && (
@@ -183,6 +208,11 @@ export default function BlogPostClient({ post, relatedPosts = [] }: BlogPostClie
       </div>
 
       <div className="prose prose-lg max-w-none">
+        <style jsx>{`
+          .prose p:empty {
+            min-height: 2em;
+          }
+        `}</style>
         <PortableText
           value={post.content}
           components={portableTextComponents}
