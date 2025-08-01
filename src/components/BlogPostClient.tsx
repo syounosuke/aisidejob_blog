@@ -196,10 +196,10 @@ export default function BlogPostClient({ post, relatedPosts = [] }: BlogPostClie
         {post.imageUrl && (
           <div className="mb-8">
             <Image
-              src={urlFor(post.imageUrl).width(800).height(400).url()}
+              src={urlFor(post.imageUrl).width(768).height(512).url()}
               alt={post.title}
-              width={800}
-              height={400}
+              width={768}
+              height={512}
               className="w-full rounded-lg"
               priority
             />
