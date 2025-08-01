@@ -60,7 +60,7 @@ export function generateMetaDescription(
   }
   
   // excerptが設定されている場合はそれを優先
-  let description = excerpt || extractPlainText(content)
+  const description = excerpt || extractPlainText(content)
   
   if (!description) {
     return 'AIサイドジョブに関する有益な情報をお届けします。'
