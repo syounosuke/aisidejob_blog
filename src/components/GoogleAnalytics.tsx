@@ -7,7 +7,7 @@ interface GoogleAnalyticsProps {
 }
 
 export default function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
-  if (!measurementId || process.env.NODE_ENV !== 'production') {
+  if (!measurementId) {
     return null
   }
 
