@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   authors: [{ name: "祥之助" }],
   creator: "祥之助",
   publisher: "祥之助",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  },
   robots: {
     index: true,
     follow: true,

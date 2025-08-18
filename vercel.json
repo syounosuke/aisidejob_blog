@@ -6,6 +6,7 @@
   "env": {
     "NEXT_PUBLIC_SANITY_PROJECT_ID": "li8wy5y0",
     "NEXT_PUBLIC_SANITY_DATASET": "production",
-    "NEXT_PUBLIC_SITE_URL": "https://20250727aisidejobblog.vercel.app"
+    "NEXT_PUBLIC_SITE_URL": "https://ai-sidejob.syounosukeblog.com",
+    "NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION": "WddrOfQl_Yzo6mtLu2fCXOZ3Fb4I8zreAZr5pxAVK8w"
   }
 }
