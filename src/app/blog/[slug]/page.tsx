@@ -5,6 +5,8 @@ import BlogPostClient from '@/components/BlogPostClient'
 import { Metadata } from 'next'
 import { generateSeoMetadata } from '../../../lib/generateSeoMeta'
 
+export const revalidate = 60; // 60秒ごとに再生成（ISR）
+
 interface Props {
   params: Promise<{ slug: string }>
 }
