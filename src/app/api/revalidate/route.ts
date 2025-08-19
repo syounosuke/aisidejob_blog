@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { revalidatePath, revalidateTag } from 'next/cache'
+import { revalidatePath } from 'next/cache'
 import { parseBody } from 'next-sanity/webhook'
 
 export async function POST(request: NextRequest) {
@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: 'Invalid webhook payload' }, { status: 400 })
     }
 
-    const { _type, slug } = body
+    const { _type, slug } = body as { _type?: string; slug?: { current?: string } }
 
     if (_type === 'post' && slug?.current) {
       // 特定の記事ページを再生成
